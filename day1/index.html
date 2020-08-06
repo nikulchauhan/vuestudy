@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Vuejs Example</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+    </head>
+    <body>
+
+        <div class="jumbotron text-center">
+            <h1>My Vue Project</h1>
+            <p>Let's Start!</p> 
+        </div>
+
+        <div class="container" id="vue-app">
+            <div class="row">
+
+                <h1>{{greet('Morning!')}}</h1>
+
+
+
+                <p v-html="weblinkTag"></p>
+            </div>
+
+
+            <div class="row">
+                <input v-model="name" placeholder="Enter Name"> <span>Hello  {{ name }}</span>
+
+
+            </div>
+            <br/>
+            <div class="row">
+        <button @click="show = !show" class="btn btn-primary">Click here</button>
+
+                <ul id="tags" style="list-style: none" v-if="show">
+                    <li  v-for="item in tags" :key="item">
+                        <span><input type="checkbox" :value='item' v-model="disLagauage" /> </span>  {{ item }}
+                    </li>
+                </ul>
+                <ul id="tags" v-if="show" >
+                    <li  v-for="item in disLagauage" :key="item">
+                        {{ item }}
+                    </li>
+                </ul>
+
+               
+
+            </div>
+
+
+        </div>
+
+        <script src="js/vue.js"></script>
+
+        <script src="1.js"></script>
+
+    </body>
+</html>
